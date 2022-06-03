@@ -2,13 +2,14 @@ package com.robertoclavijob.feignexample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-public class FeignexampleApplication {
+@EnableFeignClients
+public class FeignExampleApplication {
 
 	public static void main(String[] args) {
-		System.out.println("");
-		SpringApplication.run(FeignexampleApplication.class, args);
+		SpringApplication.run(FeignExampleApplication.class, args);
 	}
 
 }
