@@ -15,8 +15,13 @@ public class TheCatApiController {
     private TheCatApiService theCatApiService;
 
     @GetMapping("/images")
-    public List<Object> getData(){
-        return this.theCatApiService.fetchBreeds();
+    public List<Object> getImages(){
+        return this.theCatApiService.fetchImages();
+    }
+
+    @GetMapping("/images/spring")
+    public List<Object> getImagesSpring(){
+        return this.theCatApiService.fetchImagesSpring();
     }
 
     @GetMapping("/votes")

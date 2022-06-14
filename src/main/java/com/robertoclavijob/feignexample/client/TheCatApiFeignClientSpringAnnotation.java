@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(value = "thecatapi", url = "https://api.thecatapi.com/v1/")
-public interface TheCatApiFeignClient {
+@FeignClient(value = "thecatapispringannotations", url = "https://api.thecatapi.com/v1/")
+public interface TheCatApiFeignClientSpringAnnotation {
     @RequestMapping(method = RequestMethod.GET, value = "/images/search?limit=10&order=ASC")
     List<Object> getImages();
 
