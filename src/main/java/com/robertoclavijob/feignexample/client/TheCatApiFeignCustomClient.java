@@ -4,7 +4,7 @@ import feign.RequestLine;
 
 import java.util.List;
 
-public interface TheCatApiFeignClientCustom {
+public interface TheCatApiFeignCustomClient {
 
     @RequestLine("GET /images/search?limit=10&order=ASC")
     List<Object> getImages();

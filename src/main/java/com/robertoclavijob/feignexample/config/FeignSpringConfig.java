@@ -1,11 +1,11 @@
-package com.robertoclavijob.feignexample.service;
+package com.robertoclavijob.feignexample.config;
 
 import feign.Logger;
 import org.springframework.context.annotation.Bean;
 
-public class FeignConfig {
+public class FeignSpringConfig {
     @Bean
     Logger.Level feignLoggerLevel() {
-        return Logger.Level.FULL;
+        return Logger.Level.BASIC;
     }
 }
