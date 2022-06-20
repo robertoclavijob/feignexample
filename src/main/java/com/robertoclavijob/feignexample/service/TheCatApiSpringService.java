@@ -17,7 +17,7 @@ public class TheCatApiSpringService {
     }
 
     public List<Object> fetchVotes(){
-        List<Object> images = theCatApiFeignSpringClient.getVotes("4d553de3-f30a-4669-9b32-b3e4c3b9f971");
+        List<Object> images = theCatApiFeignSpringClient.getVotes();
         return images;
     }
 }
