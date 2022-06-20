@@ -12,7 +12,7 @@ public class TheCatApiSpringService {
     TheCatApiFeignSpringClient theCatApiFeignSpringClient;
 
     public List<Object> fetchImages(){
-        List<Object> images = theCatApiFeignSpringClient.getImages();
+        List<Object> images = theCatApiFeignSpringClient.getImages(10, "ASC");
         return images;
     }
 

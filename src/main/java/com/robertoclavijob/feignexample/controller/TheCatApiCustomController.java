@@ -20,4 +20,9 @@ public class TheCatApiCustomController {
         return this.theCatApiCustomService.fetchImages();
     }
 
+    @GetMapping("votes")
+    public List<Object> getVotes(){
+        return this.theCatApiCustomService.fetchVotes();
+    }
+
 }
