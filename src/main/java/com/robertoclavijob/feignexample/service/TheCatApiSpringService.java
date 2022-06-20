@@ -11,7 +11,7 @@ public class TheCatApiSpringService {
     @Autowired
     TheCatApiFeignSpringClient theCatApiFeignSpringClient;
 
-    public List<Object> fetchImagesSpring(){
+    public List<Object> fetchImages(){
         List<Object> images = theCatApiFeignSpringClient.getImages();
         return images;
     }
