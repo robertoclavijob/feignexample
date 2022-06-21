@@ -4,6 +4,7 @@ import com.robertoclavijob.feignexample.client.TheCatApiFeignCustomClient;
 import feign.Feign;
 import feign.Logger;
 import feign.RequestInterceptor;
+import feign.Retryer;
 import feign.jackson.JacksonDecoder;
 import feign.slf4j.Slf4jLogger;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ public class FeignCustomConfig {
                 .logger(new Slf4jLogger())
                 .logLevel(Logger.Level.BASIC)
                 .requestInterceptor(this.requestInterceptor())
+                .retryer(new Retryer.Default(2000l, 10000l, 5))
                 .target(TheCatApiFeignCustomClient.class, "https://api.thecatapi.com/v1/");
     }
 
