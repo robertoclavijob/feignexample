@@ -3,7 +3,6 @@ package com.robertoclavijob.feignexample.controller;
 import com.robertoclavijob.feignexample.model.GeneralResponse;
 import com.robertoclavijob.feignexample.model.Vote;
 import com.robertoclavijob.feignexample.service.TheCatApiCustomService;
-import com.robertoclavijob.feignexample.service.TheCatApiSpringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
