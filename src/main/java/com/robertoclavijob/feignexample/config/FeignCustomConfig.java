@@ -17,10 +17,9 @@ public class FeignCustomConfig {
     @Bean
     public TheCatApiFeignCustomClient feignClient(){
         return Feign.builder()
-                .encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
                 .logger(new Slf4jLogger())
-                .logLevel(Logger.Level.FULL)
+                .logLevel(Logger.Level.BASIC)
                 .requestInterceptor(this.requestInterceptor())
                 .retryer(this.retryer())
                 .errorDecoder(new MyErrorDecoder())
