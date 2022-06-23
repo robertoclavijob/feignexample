@@ -1,6 +1,7 @@
 package com.robertoclavijob.feignexample.service;
 
 import com.robertoclavijob.feignexample.client.TheCatApiFeignCustomClient;
+import com.robertoclavijob.feignexample.model.GeneralResponse;
 import com.robertoclavijob.feignexample.model.Vote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,13 +23,13 @@ public class TheCatApiCustomService {
         return images;
     }
 
-    public Object createVote(String imageId) {
+    public GeneralResponse createVote(String imageId) {
         Vote request = new Vote();
         request.setImageId(imageId);
         request.setSubId("my-user-1234");
         request.setValue(0);
 
-        Object result = this.theCatApiFeignCustomClient.postVote(request.getImageId(), request.getSubId(), request.getValue());
+        GeneralResponse result = this.theCatApiFeignCustomClient.postVote(request.getImageId(), request.getSubId(), request.getValue());
         return result;
     }
 }

@@ -1,5 +1,6 @@
 package com.robertoclavijob.feignexample.controller;
 
+import com.robertoclavijob.feignexample.model.GeneralResponse;
 import com.robertoclavijob.feignexample.service.TheCatApiCustomService;
 import com.robertoclavijob.feignexample.service.TheCatApiSpringService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class TheCatApiCustomController {
     }
 
     @PostMapping("votes/{imageId}")
-    public Object publishVote(@PathVariable("imageId") String imageId){
+    public GeneralResponse publishVote(@PathVariable("imageId") String imageId){
         return this.theCatApiCustomService.createVote(imageId);
     }
 

@@ -1,6 +1,8 @@
 package com.robertoclavijob.feignexample.client;
 
 import com.robertoclavijob.feignexample.config.FeignSpringConfig;
+import com.robertoclavijob.feignexample.model.GeneralResponse;
+import com.robertoclavijob.feignexample.model.Vote;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,4 +21,6 @@ public interface TheCatApiFeignSpringClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/votes")
     List<Object> getVotes();
+    @RequestMapping(method = RequestMethod.POST, value = "/votes")
+    GeneralResponse postVote(Vote request);
 }

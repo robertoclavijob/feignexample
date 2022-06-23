@@ -1,5 +1,6 @@
 package com.robertoclavijob.feignexample.client;
 
+import com.robertoclavijob.feignexample.model.GeneralResponse;
 import com.robertoclavijob.feignexample.model.Vote;
 import feign.Body;
 import feign.Headers;
@@ -20,5 +21,5 @@ public interface TheCatApiFeignCustomClient {
     @RequestLine("POST /votes")
     @Headers("Content-Type: application/json")
     @Body("%7B\"image_id\":\"{imageId}\",\"sub_id\":\"{subId}\",\"value\":{value}%7D")
-    Object postVote(@Param("imageId") String imageId, @Param("subId") String subId, @Param("value") Integer value);
+    GeneralResponse postVote(@Param("imageId") String imageId, @Param("subId") String subId, @Param("value") Integer value);
 }
