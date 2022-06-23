@@ -1,6 +1,7 @@
 package com.robertoclavijob.feignexample.controller;
 
 import com.robertoclavijob.feignexample.model.GeneralResponse;
+import com.robertoclavijob.feignexample.model.Vote;
 import com.robertoclavijob.feignexample.service.TheCatApiSpringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class TheCatApiSpringController {
     }
 
     @GetMapping("votes")
-    public List<Object> getVotes(){
+    public List<Vote> getVotes(){
         return this.theCatApiSpringService.fetchVotes();
     }
     @PostMapping("votes/{imageId}")

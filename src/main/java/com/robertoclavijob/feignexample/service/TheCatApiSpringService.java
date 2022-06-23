@@ -18,9 +18,9 @@ public class TheCatApiSpringService {
         return images;
     }
 
-    public List<Object> fetchVotes(){
-        List<Object> images = theCatApiFeignSpringClient.getVotes();
-        return images;
+    public List<Vote> fetchVotes(){
+        List<Vote> votes = theCatApiFeignSpringClient.getVotes();
+        return votes;
     }
 
     public GeneralResponse createVote(String imageId) {

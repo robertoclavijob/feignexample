@@ -18,9 +18,9 @@ public class TheCatApiCustomService {
         return images;
     }
 
-    public List<Object> fetchVotes(){
-        List<Object> images = this.theCatApiFeignCustomClient.getVotes("4d553de3-f30a-4669-9b32-b3e4c3b9f971");
-        return images;
+    public List<Vote> fetchVotes(){
+        List<Vote> votes = this.theCatApiFeignCustomClient.getVotes("4d553de3-f30a-4669-9b32-b3e4c3b9f971");
+        return votes;
     }
 
     public GeneralResponse createVote(String imageId) {

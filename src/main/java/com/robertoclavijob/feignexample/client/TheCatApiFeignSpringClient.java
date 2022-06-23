@@ -20,7 +20,7 @@ public interface TheCatApiFeignSpringClient {
     List<Object> getImages(@RequestParam("limit") Integer limit, @RequestParam("order") String order);
 
     @RequestMapping(method = RequestMethod.GET, value = "/votes")
-    List<Object> getVotes();
+    List<Vote> getVotes();
     @RequestMapping(method = RequestMethod.POST, value = "/votes")
     GeneralResponse postVote(Vote request);
 }

@@ -16,7 +16,7 @@ public interface TheCatApiFeignCustomClient {
 
     @RequestLine("GET /votes")
     @Headers("x-api-key: {apiKey}")
-    List<Object> getVotes(@Param("apiKey") String apiKey);
+    List<Vote> getVotes(@Param("apiKey") String apiKey);
 
     @RequestLine("POST /votes")
     @Headers("Content-Type: application/json")
