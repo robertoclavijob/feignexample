@@ -7,6 +7,7 @@ import feign.Logger;
 import feign.RequestInterceptor;
 import feign.Retryer;
 import feign.jackson.JacksonDecoder;
+import feign.jackson.JacksonEncoder;
 import feign.slf4j.Slf4jLogger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,9 +17,10 @@ public class FeignCustomConfig {
     @Bean
     public TheCatApiFeignCustomClient feignClient(){
         return Feign.builder()
+                .encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
                 .logger(new Slf4jLogger())
-                .logLevel(Logger.Level.BASIC)
+                .logLevel(Logger.Level.FULL)
                 .requestInterceptor(this.requestInterceptor())
                 .retryer(this.retryer())
                 .errorDecoder(new MyErrorDecoder())
